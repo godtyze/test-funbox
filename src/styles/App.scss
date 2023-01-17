@@ -7,5 +7,19 @@ html {
 }
 
 .App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('../assets/png/Pattern.png');
+  background-size: cover;
+  padding: 36px 80px 67px 80px;
+}
 
+.title {
+  color: v.$mainColor;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 44px;
+  text-shadow: 0 1px 1px #000000;
 }
