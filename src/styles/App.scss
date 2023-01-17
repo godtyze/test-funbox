@@ -1,0 +1,11 @@
+@use 'fonts';
+@use 'variables' as v;
+@import 'normalize';
+
+html {
+  font-family: v.$mainFont;
+}
+
+.App {
+
+}
