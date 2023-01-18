@@ -1,0 +1,126 @@
+@use '../variables' as v;
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 14px;
+  max-width: 320px;
+  height: 509px;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  height: 480px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: v.$borderColor;
+  clip-path: polygon(2.5rem 0, 100% 0, 100% 100%, 0 100%, 0 2.5rem);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border-radius: 12px;
+    bottom: 4px;
+    left: 4px;
+    z-index: -1;
+    background-color: v.$backgroundColor;
+    clip-path: polygon(2.5rem 0, 100% 0, 100% 100%, 0 100%, 0 2.5rem);
+  }
+
+  &__type {
+    padding-top: 24px;
+    color: v.$secondaryColor;
+    font-weight: 400;
+    align-self: center;
+  }
+
+  &__title-wrapper {
+    max-width: 211px;
+    width: 100%;
+    align-self: center;
+  }
+
+  &__ingredient,
+  &__title {
+    font-size: 48px;
+    line-height: 56px;
+    padding-top: 5px;
+    font-family: v.$secondaryFont;
+    font-weight: 700;
+    color: v.$cardTitleColor;
+  }
+
+  &__ingredient {
+    line-height: 28px;
+    font-size: 24px;
+    padding-top: 0;
+  }
+
+  &__info {
+    padding-top: 15px;
+    padding-left: 51px;
+    line-height: 16px;
+    font-weight: 400;
+    font-family: v.$secondaryFont;
+    color: v.$secondaryColor;
+  }
+
+  &__img {
+    padding-top: 25px;
+  }
+
+  &__weight {
+    font-family: v.$secondaryFont;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: v.$borderColor;
+    color: v.$mainColor;
+    top: 384px;
+    left: 224px;
+
+    &-number {
+      font-size: 42px;
+    }
+
+    &-text {
+      font-size: 21px;
+    }
+  }
+
+  &__under-text {
+    font-family: v.$secondaryFont;
+    font-size: 13px;
+    font-weight: 400;
+    color: v.$mainColor;
+  }
+
+  &__buy-link {
+    color: v.$borderColor;
+    border-bottom: 1px dashed v.$borderColor;
+    cursor: pointer;
+  }
+}
+
+.img-container {
+  overflow: hidden;
+  max-height: 293px;
+
+  &.happy {
+    max-height: 277px;
+  }
+}
+

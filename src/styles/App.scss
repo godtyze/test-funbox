@@ -1,14 +1,16 @@
 @use 'fonts';
 @use 'variables' as v;
-@import 'normalize';
+@use 'normalize';
 
 html {
   font-family: v.$mainFont;
+  color: v.$mainColor;
 }
 
 .App {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
   background: url('../assets/png/Pattern.png');
@@ -17,9 +19,9 @@ html {
 }
 
 .title {
-  color: v.$mainColor;
   font-size: 36px;
   font-weight: 100;
   line-height: 44px;
   text-shadow: 0 1px 1px #000000;
+  padding-bottom: 24px;
 }
