@@ -7,4 +7,6 @@ export interface IProduct {
   weight: number;
   isHappy: boolean;
   ingredient: string;
+  description: string;
+  inStock: boolean;
 }

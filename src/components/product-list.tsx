@@ -12,7 +12,9 @@ const products: IProduct[] = [
     productCount: 10,
     addition: 'мышь в подарок',
     weight: 0.5,
-    isHappy: false
+    isHappy: false,
+    inStock: true,
+    description: 'Печень утки разварная с артишоками.'
   },
   {
     id: 2,
@@ -22,7 +24,9 @@ const products: IProduct[] = [
     productCount: 40,
     addition: '2 мыши в подарок',
     weight: 2,
-    isHappy: false
+    isHappy: false,
+    inStock: true,
+    description: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
   },
   {
     id: 3,
@@ -32,7 +36,9 @@ const products: IProduct[] = [
     productCount: 100,
     addition: '5 мышей в подарок',
     weight: 5,
-    isHappy: true
+    isHappy: true,
+    inStock: false,
+    description: 'Филе из цыплят с трюфелями в бульоне.'
   }
 ];
 
@@ -48,6 +54,8 @@ const ProductList: React.FC = () => {
                        weight={product.weight}
                        isHappy={product.isHappy}
                        ingredient={product.ingredient}
+                       description={product.description}
+                       inStock={product.inStock}
           />
         </li>
       ))}

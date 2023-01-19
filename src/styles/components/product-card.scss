@@ -17,10 +17,20 @@
   flex-direction: column;
   max-width: 320px;
   height: 480px;
+  cursor: pointer;
   width: 100%;
   border-radius: 12px;
   background-color: v.$borderColor;
   clip-path: polygon(2.5rem 0, 100% 0, 100% 100%, 0 100%, 0 2.5rem);
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: v.$borderColorHover;
+  }
+
+  &:hover &__weight {
+    background-color: v.$borderColorHover;
+  }
 
   &::before {
     content: '';
@@ -35,11 +45,39 @@
     clip-path: polygon(2.5rem 0, 100% 0, 100% 100%, 0 100%, 0 2.5rem);
   }
 
+  &.disabled {
+    filter: brightness(0.85);
+    pointer-events: none;
+    background-color: v.$colorDisabled;
+  }
+
+  &.selected {
+    background-color: v.$borderColorSelected;
+
+    &:hover {
+      background-color: v.$borderColorSelectedHover;
+    }
+
+    &:hover .card__weight {
+      background-color: v.$borderColorSelectedHover;
+    }
+  }
+
   &__type {
     padding-top: 24px;
     color: v.$secondaryColor;
     font-weight: 400;
+    font-size: 16px;
     align-self: center;
+    transition: color 0.1s ease-in-out;
+
+    &.selected {
+      color: #E62E7A;
+    }
+
+    &.disabled {
+      color: v.$colorDisabled;
+    }
   }
 
   &__title-wrapper {
@@ -56,6 +94,10 @@
     font-family: v.$secondaryFont;
     font-weight: 700;
     color: v.$cardTitleColor;
+
+    &.disabled {
+      color: v.$colorDisabled;
+    }
   }
 
   &__ingredient {
@@ -71,10 +113,14 @@
     font-weight: 400;
     font-family: v.$secondaryFont;
     color: v.$secondaryColor;
+
+    &.disabled {
+      color: v.$colorDisabled;
+    }
   }
 
   &__img {
-    padding-top: 25px;
+    padding-top: 30px;
   }
 
   &__weight {
@@ -91,6 +137,15 @@
     color: v.$mainColor;
     top: 384px;
     left: 224px;
+    transition: background-color 0.1s ease-in-out;
+
+    &.selected {
+      background-color: v.$borderColorSelected;
+    }
+
+    &.disabled {
+      background-color: v.$colorDisabled;
+    }
 
     &-number {
       font-size: 42px;
@@ -106,21 +161,31 @@
     font-size: 13px;
     font-weight: 400;
     color: v.$mainColor;
+
+    &.disabled {
+      color: #FFFF66;
+    }
   }
 
   &__buy-link {
     color: v.$borderColor;
     border-bottom: 1px dashed v.$borderColor;
     cursor: pointer;
+    transition: color 0.1s, border-bottom-color 0.1s ease-in-out;
+
+    &:hover {
+      color: v.$borderColorHover;
+      border-bottom-color: v.$borderColorHover;
+    }
   }
 }
 
 .img-container {
   overflow: hidden;
-  max-height: 293px;
+  max-height: 297px;
 
   &.happy {
-    max-height: 277px;
+    max-height: 280px;
   }
 }
 
